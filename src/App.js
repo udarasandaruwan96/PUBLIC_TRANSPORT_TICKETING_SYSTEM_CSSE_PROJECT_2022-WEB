@@ -27,6 +27,7 @@ function App() {
     <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
         <Routes>
+
           <Route path="/">
             <Route path="login" element={<Login />} />
             <Route
@@ -37,6 +38,8 @@ function App() {
                 </RequireAuth>
               }
             />
+
+          </Route>            
             <Route path="users">
               <Route
                 index
@@ -77,7 +80,7 @@ function App() {
               <Route index element={<View_travel_employee_allocation/>} />
 
             
-            </Route>
+            
           </Route>
         </Routes>
       </BrowserRouter>

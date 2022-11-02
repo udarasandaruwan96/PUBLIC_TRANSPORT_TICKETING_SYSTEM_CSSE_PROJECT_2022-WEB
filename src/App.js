@@ -9,6 +9,10 @@ import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
+import Timetable from "./pages/timetable/Timetable";
+import Allocate_employees_for_travel from "./pages/travel_employee_allocation/allocate_employees_for_travel";
+import View_travel_employee_allocation from "./pages/travel_employee_allocation/view_travel_employee_allocation";
+
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -59,31 +63,20 @@ function App() {
                 }
               />
             </Route>
-            <Route path="products">
-              <Route
-                index
-                element={
-                  <RequireAuth>
-                    <List />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path=":productId"
-                element={
-                  <RequireAuth>
-                    <Single />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="new"
-                element={
-                  <RequireAuth>
-                    <New inputs={productInputs} title="Add New Product" />
-                  </RequireAuth>
-                }
-              />
+            <Route path="/Timetable">
+              <Route index element={<Timetable />} />
+
+            
+            </Route>
+            <Route path="/allocate_employees_for_travel">
+              <Route index element={<Allocate_employees_for_travel/>} />
+
+            
+            </Route>
+            <Route path="/View_travel_employee_allocation">
+              <Route index element={<View_travel_employee_allocation/>} />
+
+            
             </Route>
           </Route>
         </Routes>

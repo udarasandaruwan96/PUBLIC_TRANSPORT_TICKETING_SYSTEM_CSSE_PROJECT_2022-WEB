@@ -2,18 +2,19 @@
   flex: 1;
   border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
-  background-color: white;
+  background-color: rgb(223, 193, 190);
 
   .top {
-    height: 50px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgb(225, 97, 82);
 
     .logo {
       font-size: 20px;
       font-weight: bold;
-      color: #6439ff;
+      color: #f7f5fc;
     }
   }
 
@@ -49,12 +50,12 @@
         }
 
         .icon {
-          font-size: 18px;
-          color: #7451f8;
+          font-size: 30px;
+          color: #1b1a1a;
         }
 
         span{
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 600;
             color: #888;
             margin-left: 10px;

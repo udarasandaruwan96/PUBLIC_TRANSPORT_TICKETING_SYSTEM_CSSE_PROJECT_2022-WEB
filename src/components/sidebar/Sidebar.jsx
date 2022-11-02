@@ -15,13 +15,20 @@ import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
+import BadgeIcon from '@mui/icons-material/Badge';
+import DirectionsBusFilledIcon from '@mui/icons-material/DirectionsBusFilled';
+import FeedbackIcon from '@mui/icons-material/Feedback';
+import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
+import DepartureBoardOutlinedIcon from '@mui/icons-material/DepartureBoardOutlined';
+
+
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   return (
     <div className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">UZONIT</span>
+          <span className="logo">Ceylon Travel</span>
         </Link>
       </div>
       <hr />
@@ -42,41 +49,38 @@ const Sidebar = () => {
               <span>Users</span>
             </li>
           </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
-            <li>
-              <StoreIcon className="icon" />
-              <span>Products</span>
-            </li>
+          <Link to="/allocate_employees_for_travel" style={{ textDecoration: "none" }}>
+          <li>
+            <BadgeIcon className="icon" />
+            <span>Employee</span>
+          </li>
+          </Link>
+          
+          <Link to="/allocate_employees_for_travel" style={{ textDecoration: "none" }}>
+          <li>
+            <DirectionsBusFilledIcon className="icon" />
+            <span>Busses</span>
+          </li>
+          </Link>
+
+          <Link to="/Timetable" style={{ textDecoration: "none" }}>
+          <li>
+            <DepartureBoardOutlinedIcon className="icon" />
+            <span>Timtable</span>
+          </li>
           </Link>
           <li>
-            <CreditCardIcon className="icon" />
-            <span>Orders</span>
+            <MonetizationOnOutlinedIcon className="icon" />
+            <span>Pramotion</span>
           </li>
-          <li>
-            <LocalShippingIcon className="icon" />
-            <span>Delivery</span>
-          </li>
-          <p className="title">USEFUL</p>
+         
           <li>
             <InsertChartIcon className="icon" />
-            <span>Stats</span>
+            <span>Statistics</span>
           </li>
           <li>
-            <NotificationsNoneIcon className="icon" />
-            <span>Notifications</span>
-          </li>
-          <p className="title">SERVICE</p>
-          <li>
-            <SettingsSystemDaydreamOutlinedIcon className="icon" />
-            <span>System Health</span>
-          </li>
-          <li>
-            <PsychologyOutlinedIcon className="icon" />
-            <span>Logs</span>
-          </li>
-          <li>
-            <SettingsApplicationsIcon className="icon" />
-            <span>Settings</span>
+            <FeedbackIcon className="icon" />
+            <span>Feedback</span>
           </li>
           <p className="title">USER</p>
           <li>

@@ -44,7 +44,7 @@ const Employee_Datatable = () => {
 
   const handleDelete = async(id) => {
     try{
-      await deleteDoc(doc(db, "city", id));
+      await deleteDoc(doc(db, "employeeAllocation", id));
       setData(data.filter((item) => item.id !== id));
     }catch(err){
       console.log(err)

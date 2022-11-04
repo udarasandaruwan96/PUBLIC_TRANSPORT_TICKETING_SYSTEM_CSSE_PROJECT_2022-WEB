@@ -8,9 +8,13 @@ import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { travels } from '../../travelsSourse';
 import DatePicker from "react-datepicker";
 import "./Timetable.scss";
+import Swal from 'sweetalert2'
+import {auth,db, storage} from "../../firebase"
+import { useNavigate } from "react-router-dom";
+import {addDoc, collection, doc,serverTimestamp,setDoc} from 'firebase/firestore'
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -22,77 +26,7 @@ const localizer = dateFnsLocalizer({
   getDay,
   locales,
 });
-
-const events=[
-  {
-    title: "Colombo to Kandy",
-    start: new Date('November 11, 2022 05:35:32'),
-    end: new Date('November 11, 2022 08:35:32'),
-    
-},
-{
-    title: "Kandy to Mathale",
-    start: new Date('November 11, 2022 01:35:32'),
-    end: new Date('November 11, 2022 03:35:32'),
-    
-},
-{
-    title: "Colombo to Jaffna",
-    start: new Date('November 11, 2022 09:35:32'),
-    end: new Date('November 11, 2022 12:35:32'),
-
-},
-
-{
-  title: "Colombo to Jaffna",
-  start: new Date('November 10, 2022 05:35:32'),
-  end: new Date('November 10, 2022 08:35:32'),
-  
-},
-{
-  title: "Kandy to Mathale",
-  start: new Date('November 10, 2022 01:35:32'),
-  end: new Date('November 10, 2022 03:35:32'),
-  
-},
-{
-  title: "Anuradhapura to Jaffna",
-  start: new Date('November 10, 2022 09:35:32'),
-  end: new Date('November 10, 2022 12:35:32'),
-
-},
-{
-  title: "Kandy to Mathale",
-  start: new Date('November 15, 2022 01:35:32'),
-  end: new Date('November 15, 2022 03:35:32'),
-  
-},
-{
-  title: "Anuradhapura to Jaffna",
-  start: new Date('November 15, 2022 09:35:32'),
-  end: new Date('November 15, 2022 12:35:32'),
-
-},
-
-{
-  title: "Anuradhapura to Jaffna",
-  start: new Date('November 08, 2022 09:35:32'),
-  end: new Date('November 08, 2022 12:35:32'),
-
-},
-{
-  title: "Kandy to Mathale",
-  start: new Date('November 08, 2022 01:35:32'),
-  end: new Date('November 08, 2022 03:35:32'),
-  
-},
-{
-  title: "Anuradhapura to Jaffna",
-  start: new Date('November 07, 2022 09:35:32'),
-  end: new Date('November 07, 2022 12:35:32'),
-
-}
-]
+const events=travels
 
 const Timetable = () => {
 
@@ -101,9 +35,43 @@ const Timetable = () => {
 
  
 
-  function handleAddEvent() {
-      
+  function handleAddEvent () {
+            
+            const d1 = new Date(newEvent.start);
+            
+            const d2 = new Date(newEvent.end);
+            if (d1>d2)
+            {   
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Estimated destination time should be happen after the Departure Time!',
+                
+              })
+                
+             }else{
+              
       setAllEvents([...allEvents, newEvent]);
+      
+      try{  
+      // const res =await createUserWithEmailAndPassword(
+      //  auth,
+      //  data.email,
+      //  data.password
+      // )   
+     addDoc(collection(db,"Travals"),{
+       ...newEvent,
+       timeStamp:serverTimestamp()
+      });
+      
+    }catch(err){
+       console.log(err)
+    }
+             }
+
+
+
+      
   }
 
 
@@ -134,7 +102,7 @@ const Timetable = () => {
             <h2  >Add New Travel</h2>
            <div>
            <div class="row">
-       <div class="col-md-7 ">
+       <div class="col-md-6 ">
   <div class="form-group row">
     
     <label for="staticEmail" class=" col-form-label">Travel Title</label>
@@ -145,16 +113,16 @@ const Timetable = () => {
 
 <div class="col-md-2 ">
   <div class="form-group row">
-    <label for="inputPassword" class=" col-form-label">Travel start Time</label>
+    <label for="inputPassword" class=" col-form-label">Travel Departure Time</label>
    
     <DatePicker  selected={newEvent.start}  onChange={(start) => setNewEvent({ ...newEvent, start })} showTimeSelect dateFormat="Pp" />
     
   </div>
   </div>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <div class="col-md-2 ">
+  <div class="col-md-3 ">
   <div class="form-group row">
-    <label for="inputPassword" class=" col-form-label">Destination Time</label>
+    <label for="inputPassword" class=" col-form-label"> Arrival Time to Destination</label>
    
     <DatePicker  selected={newEvent.end}  onChange={(end) => setNewEvent({ ...newEvent, end })} showTimeSelect dateFormat="Pp" />
   

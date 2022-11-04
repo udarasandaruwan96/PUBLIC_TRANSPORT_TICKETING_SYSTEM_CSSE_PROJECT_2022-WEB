@@ -32,11 +32,11 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "order":
+    case "Travals":
       data = {
-        title: "ORDERS",
-        isMoney: false,
-        link: "View all orders",
+        title: "Travals",
+        query:"Travals",
+        link: "View all Travals",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"

@@ -54,7 +54,7 @@ export const empColumns = [
   
   {
     field: "Employee",
-    headerName: "Employee",
+    headerName: "Vehicle",
     width: 230,
     renderCell: (params) => {
       return (

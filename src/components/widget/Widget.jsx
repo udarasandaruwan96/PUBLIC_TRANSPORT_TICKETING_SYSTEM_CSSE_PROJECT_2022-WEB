@@ -61,10 +61,10 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "product":
+    case "employeeAllocation":
       data = {
-        title: "PRODUCTS",
-        query:"products",
+        title: "Employee Allocation",
+        query:"employeeAllocation",
         link: "See details",
         icon: (
           <AccountBalanceWalletOutlinedIcon

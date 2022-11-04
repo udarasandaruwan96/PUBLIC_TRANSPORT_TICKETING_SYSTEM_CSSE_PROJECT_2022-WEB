@@ -49,14 +49,14 @@ const Sidebar = () => {
               <span>Users</span>
             </li>
           </Link>
-          <Link to="/allocate_employees_for_travel" style={{ textDecoration: "none" }}>
+          <Link to="/employee" style={{ textDecoration: "none" }}>
           <li>
             <BadgeIcon className="icon" />
             <span>Employee</span>
           </li>
           </Link>
           
-          <Link to="/allocate_employees_for_travel" style={{ textDecoration: "none" }}>
+          <Link to="/employee" style={{ textDecoration: "none" }}>
           <li>
             <DirectionsBusFilledIcon className="icon" />
             <span>Busses</span>

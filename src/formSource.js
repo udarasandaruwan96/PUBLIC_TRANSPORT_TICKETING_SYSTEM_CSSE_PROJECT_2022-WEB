@@ -41,6 +41,44 @@ export const userInputs = [
       placeholder: "USA",
     },
   ];
+
+  export const employeeAllocationInputs = [
+    {
+      id: "Driver",
+      label: "Driver",
+      type: "text",
+      placeholder: "Driver Name",
+    },
+    {
+      id: "BusNumber",
+      label: "BusNumber",
+      type: "text",
+      placeholder: "BusNumber",
+    },
+ 
+    
+    {
+      id: "Conductor",
+      label: "Conductor",
+      type: "text",
+      placeholder: "Conductor Name",
+    },
+    
+    {
+      id: "BusRoute",
+      label: "BusRoute",
+      type: "text",
+      placeholder: "BusRoute",
+    },
+    {
+      id: "inspector",
+      label: "inspector",
+      type: "text",
+      placeholder:"Inspector Name"
+    },
+   
+  ];
+  
   
   export const productInputs = [
     {

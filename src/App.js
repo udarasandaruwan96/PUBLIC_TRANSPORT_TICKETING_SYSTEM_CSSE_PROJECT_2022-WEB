@@ -4,14 +4,15 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { productInputs, userInputs } from "./formSource";
+import { productInputs, userInputs, employeeAllocationInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 import Timetable from "./pages/timetable/Timetable";
-import Allocate_employees_for_travel from "./pages/travel_employee_allocation/allocate_employees_for_travel";
-import View_travel_employee_allocation from "./pages/travel_employee_allocation/view_travel_employee_allocation";
+import Employee_allocate_Form from "./pages/employee_allocation/Employee_allocate_Form";
+import Employee_List from "./pages/employee_list/Employee_List";
+
 
 
 function App() {
@@ -70,15 +71,15 @@ function App() {
               <Route index element={<Timetable />} />
 
             
-            </Route>
-            <Route path="/allocate_employees_for_travel">
-              <Route index element={<Allocate_employees_for_travel/>} />
-
             
             </Route>
-            <Route path="/View_travel_employee_allocation">
-              <Route index element={<View_travel_employee_allocation/>} />
-
+            <Route path="/employee">
+              <Route   index element={<Employee_List title="Employee Allocation for the Vehicle" />} />
+              
+              <Route
+                path="newAllocation"
+                element={<Employee_allocate_Form inputs={employeeAllocationInputs} title="Add New Employee Allocation" />}
+              />
             
             
           </Route>

@@ -47,3 +47,49 @@ export const userColumns = [
   //   },
   // },
 ];
+
+
+
+export const empColumns = [
+  
+  {
+    field: "Employee",
+    headerName: "Employee",
+    width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={params.row.img} alt="avatar" />
+          {params.row.username}
+        </div>
+      );
+    },
+  },
+  {
+    field: "BusNumber",
+    headerName: "BusNumber",
+    width: 230,
+  },
+
+  {
+    field: "BusRoute",
+    headerName: "BusRoute",
+    width: 100,
+  },
+  {
+    field: "Driver",
+    headerName: "Driver",
+    width: 150,
+  },
+  {
+    field: "Conductor",
+    headerName: "Conductor",
+    width: 150,
+  },
+  {
+    field: "inspector",
+    headerName: "Inspector",
+    width: 150,
+  },
+
+];

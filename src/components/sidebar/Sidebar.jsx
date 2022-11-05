@@ -50,30 +50,30 @@ const Sidebar = () => {
             </li>
           </Link>
           <Link to="/employee" style={{ textDecoration: "none" }}>
-          <li>
-            <BadgeIcon className="icon" />
-            <span>Employee</span>
-          </li>
+            <li>
+              <BadgeIcon className="icon" />
+              <span>Employee</span>
+            </li>
           </Link>
-          
-          <Link to="/employee" style={{ textDecoration: "none" }}>
-          <li>
-            <DirectionsBusFilledIcon className="icon" />
-            <span>Busses</span>
-          </li>
+
+          <Link to="/bussRoutes" style={{ textDecoration: "none" }}>
+            <li>
+              <DirectionsBusFilledIcon className="icon" />
+              <span>Busses</span>
+            </li>
           </Link>
 
           <Link to="/Timetable" style={{ textDecoration: "none" }}>
-          <li>
-            <DepartureBoardOutlinedIcon className="icon" />
-            <span>Timtable</span>
-          </li>
+            <li>
+              <DepartureBoardOutlinedIcon className="icon" />
+              <span>Timtable</span>
+            </li>
           </Link>
           <li>
             <MonetizationOnOutlinedIcon className="icon" />
             <span>Pramotion</span>
           </li>
-         
+
           <li>
             <InsertChartIcon className="icon" />
             <span>Statistics</span>
@@ -87,10 +87,14 @@ const Sidebar = () => {
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
           </li>
-          <li>
-            <ExitToAppIcon className="icon" />
-            <span>Logout</span>
-          </li>
+          {/* /////////////////////////////////////////// */}
+
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <li>
+              <ExitToAppIcon className="icon" />
+              <span>Logout</span>
+            </li>
+          </Link>
         </ul>
       </div>
       <div className="bottom">

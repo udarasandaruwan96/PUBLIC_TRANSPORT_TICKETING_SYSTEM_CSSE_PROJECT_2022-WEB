@@ -51,7 +51,7 @@ const Featured = () => {
       </div>
       <div className="bottom">
         <div className="featuredChart">
-          <CircularProgressbar value={diff} text={"dvf"} strokeWidth={5} />
+          <CircularProgressbar value={diff}  strokeWidth={5} />
 
 
 

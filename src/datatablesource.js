@@ -48,10 +48,7 @@ export const userColumns = [
   // },
 ];
 
-
-
 export const empColumns = [
-  
   {
     field: "Employee",
     headerName: "Vehicle",
@@ -91,5 +88,42 @@ export const empColumns = [
     headerName: "Inspector",
     width: 150,
   },
+];
 
+//BusRouteColumns...............
+export const BusRouteColumns = [
+  {
+    field: "Busses",
+    headerName: "Bus",
+    width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={params.row.img} alt="avatar" />
+          {params.row.username}
+        </div>
+      );
+    },
+  },
+  {
+    field: "RouteName",
+    headerName: "RouteName",
+    width: 230,
+  },
+
+  {
+    field: "RouteID",
+    headerName: "RouteID",
+    width: 100,
+  },
+  {
+    field: "RouteTime",
+    headerName: "RouteTime",
+    width: 150,
+  },
+  {
+    field: "BusNumber",
+    headerName: "BusNumber",
+    width: 150,
+  },
 ];

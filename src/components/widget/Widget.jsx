@@ -20,7 +20,7 @@ const Widget = ({ type }) => {
         title: "USERS",
         isMoney: false,
         link: "See all users",
-        query:"users",
+        query: "users",
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -35,7 +35,7 @@ const Widget = ({ type }) => {
     case "Travals":
       data = {
         title: "Travals",
-        query:"Travals",
+        query: "Travals",
         link: "View all Travals",
         icon: (
           <ShoppingCartOutlinedIcon
@@ -48,10 +48,10 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "earning":
+    case "busroutes":
       data = {
-        title: "EARNINGS",
-        isMoney: true,
+        title: "Bus Routes",
+        query: "busroutes",
         link: "View net earnings",
         icon: (
           <MonetizationOnOutlinedIcon
@@ -64,7 +64,7 @@ const Widget = ({ type }) => {
     case "employeeAllocation":
       data = {
         title: "Employee Allocation",
-        query:"employeeAllocation",
+        query: "employeeAllocation",
         link: "See details",
         icon: (
           <AccountBalanceWalletOutlinedIcon

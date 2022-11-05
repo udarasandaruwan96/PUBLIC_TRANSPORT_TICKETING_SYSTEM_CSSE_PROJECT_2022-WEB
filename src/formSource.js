@@ -79,6 +79,36 @@ export const userInputs = [
    
   ];
   
+  ///...............
+  export const AddBusRoutesInputs = [
+    {
+      id: "RouteName",
+      label: "RouteName",
+      type: "text",
+      placeholder: "Route Name",
+    },
+    {
+      id: "RouteID",
+      label: "RouteID",
+      type: "text",
+      placeholder: "Route ID",
+    },
+
+    {
+      id: "RouteTime",
+      label: "RouteTime",
+      type: "text",
+      placeholder: "Route Time",
+    },
+
+    {
+      id: "BusNumber",
+      label: "BusNumber",
+      type: "text",
+      placeholder: "Bus Number",
+    },
+  ];
+  
   
   export const productInputs = [
     {
